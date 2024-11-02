@@ -1,4 +1,5 @@
 "use client";
+import { ThemeChanger } from "@/components/ThemeChanger";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
@@ -11,7 +12,8 @@ export default function Home() {
   const [url, setUrl] = useState("");
   const [uploading, setUploading] = useState(false);
 
-  const uploadFile = async () => {
+	const uploadFile = async () => {
+	 
     try {
       if (!file) {
         toast.warning("No file selected");
@@ -43,7 +45,8 @@ export default function Home() {
   };
 
 	return (
-		<div className="bg-zinc-200 h-screen pt-10 flex flex-col">
+		<div className="bg-zinc-200  text-black dark:text-white dark:bg-zinc-600 h-screen pt-10 flex flex-col">
+			 <ThemeChanger/>
 			<h1 className="text-3xl font-bold text-center pt-10 capitalize">
 				Create Your Photo Gallery
 			</h1>
@@ -67,7 +70,7 @@ export default function Home() {
 					type="file"
 					accept="image/*"
 					onChange={handleChange}
-					className="w-[200px] bg-white"
+					className="w-[200px] bg-white dark:bg-zinc-500 hover:cursor-pointer hover:bg-zinc-600"
 				/>
 				<Button
 					disabled={uploading}
