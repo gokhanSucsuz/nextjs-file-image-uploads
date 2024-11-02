@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import {  useState } from "react";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 
 export default function Home() {
 	const [file, setFile] = useState<File>();
@@ -30,7 +30,7 @@ export default function Home() {
       const signedUrl = await uploadRequest.json();
 		setUrl(signedUrl);
 		console.log(signedUrl)
-		setImages(prev=>[...prev,signedUrl])
+		setImages(prev=>[...prev,url])
 		setUploading(false);
 		toast.success("Image uploaded successfully");
     } catch (e) {
@@ -56,8 +56,9 @@ export default function Home() {
 				{images?.map((image, index) => (
 					image && (
 						<div key={index} className="relative flex-1 basis-[300px] h-[200px]">
+							
               				<Image
-                				loader={({src, width})=>src}
+								loader={({ src,width}) => src} //eslint-disable-line @typescript-eslint/no-unused-vars
 								src={image}
 								fill
 								alt="Image from Pinata"
