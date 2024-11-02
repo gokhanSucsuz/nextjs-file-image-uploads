@@ -50,7 +50,9 @@ export default function Home() {
 			<h1 className="text-3xl font-bold text-center pt-10 capitalize">
 				Upload Your Images to Create Your Photo Gallery
 			</h1>
-			<div className="flex flex-wrap gap-1 gap-y-5 p-5 bg-white w-[650px] min-h-[300px] mx-auto mt-6 mb-10 rounded-md shadow-sm">
+			<div className="flex flex-wrap gap-1 gap-y-5 p-5 bg-white 
+			w-[90%]
+			sm:w-[650px] sm:min-h-[300px] mx-auto mt-6 mb-10 rounded-md shadow-sm">
 				{images?.map((image, index) => (
 					image && (
 						<div key={index} className="relative flex-1 basis-[300px] h-[200px]">
