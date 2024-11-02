@@ -29,8 +29,8 @@ export default function Home() {
       });
       const signedUrl = await uploadRequest.json();
 		setUrl(signedUrl);
-		console.log(signedUrl)
-		setImages(prev=>[...prev,url])
+		console.log(url)
+		setImages(prev=>[...prev,signedUrl])
 		setUploading(false);
 		toast.success("Image uploaded successfully");
     } catch (e) {
@@ -58,9 +58,11 @@ export default function Home() {
 						<div key={index} className="relative flex-1 basis-[300px] h-[200px]">
 							
               				<Image
-								loader={({ src,width}) => src} //eslint-disable-line @typescript-eslint/no-unused-vars
+								loader={({ src, width }) => src} //eslint-disable-line @typescript-eslint/no-unused-vars
+								unoptimized
 								src={image}
 								fill
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 								alt="Image from Pinata"
 								className="object-cover rounded-lg"
 							/>
