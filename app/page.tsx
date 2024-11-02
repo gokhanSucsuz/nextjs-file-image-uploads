@@ -48,7 +48,7 @@ export default function Home() {
 		<div className="bg-zinc-200  text-black dark:text-white dark:bg-zinc-600 h-screen pt-10 flex flex-col">
 			 <ThemeChanger/>
 			<h1 className="text-3xl font-bold text-center pt-10 capitalize">
-				Create Your Photo Gallery
+				Upload Your Images to Create Your Photo Gallery
 			</h1>
 			<div className="flex flex-wrap gap-1 gap-y-5 p-5 bg-white w-[650px] min-h-[300px] mx-auto mt-6 mb-10 rounded-md shadow-sm">
 				{images?.map((image, index) => (
