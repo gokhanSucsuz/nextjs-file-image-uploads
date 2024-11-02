@@ -78,6 +78,7 @@ export default function Home() {
 					disabled={uploading}
 					onClick={uploadFile}
 					variant={"default"}
+					className="font-semibold"
 				>
 					{uploading ? "Uploading..." : "Upload Image"}
 				</Button>
